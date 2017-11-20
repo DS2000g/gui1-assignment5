@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!--
+File: /~dshapiro
+91.461 Assignment: Assignment 5
+Daniel Shapiro, UMass Lowell Computer Science, dshapiro@student.uml.edu
+Copyright (c) 2017 by Daniel Shapiro. All rights reserved. May be
+freely
+copied or excerpted for educational purposes with credit to the
+author.
+updated by DMS on November 18, 2017 at 6:00 PM
+-->
+
+<head> 
+   <link rel="stylesheet" href="css/style.css">
+
+<title> Daniel Shapiro Assignment5 -  Car Purchase Compaison Tool v2.0</title>
+
+</head>
+
+<body onload="pageLoad()">
+<h1> Car Purchase Compaison Tool v2.0</h1>
+
+<!--
+Adding the Javascript
+-->
+
+<!--
+ Local embedded
+-->
+<script>
+function javaScriptTest01() 
+{
+   document.getElementById('debug').value = 'javaScriptTest01';
+}
+function javaScriptTest02() 
+{
+   document.getElementById('debug').value = 'javaScriptTest02';
+}
+</script> 
+<!--
+ jQuery
+-->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+<!--
+ JS dir NOTE: must be AFTER jQuery as it depends on it
+-->
+<script src="js/assignment5.js"></script> 
+
+<br>
+<textarea id="debug" name="debug" rows="4" cols="50" style="display:none;">
+</textarea> 
+<br>
+
+<!--
+Input
+-->
+
+<hr>
+Common Options:
+<table class="tableIn">
+   <tr>
+   <td>Years:           
+      <input type="text" value="3" id="years"></td>
+   <td>Interst Rate (%):
+      <input type="text" value="4" id="interest"></td>
+   <td>Miles/Year (ml): 
+      <input type="text" value="15000" id="mlYear"></td>
+   <td>Price/Gallon ($):
+      <input type="text" value="3"     id="prGal"></td>
+   </tr>
+</table>
+
+<hr>
+<table class=tableOut>
+   <tr>
+   <td>Number Of Prices:
+      <input type="text" value="0" id="prices" onblur="procPrices()"></td>
+   </tr>
+   <tr>
+   <td>Number Of MPG   :
+      <input type="text" value="0" id="mgps" onblur="procMPGs()"></td>
+   </tr>
+</table>
+
+<button onclick="makeForm();">Enter Data</button><br>
+
+<hr>
+<table id="priceTable" class="tableIn">
+</table>
+
+<hr>
+
+<table id="mpgTable" class="tableIn">
+</table>
+<hr>
+
+<!--
+Repeat Information
+-->
+
+<button onclick="verifyData();">Verify Data</button><br>
+
+<br>
+<textarea id="repeat" name="repeat" rows="15" cols="40" readonly>
+</textarea> 
+<br>
+<hr>
+
+<!--
+Table
+-->
+
+<button onclick="makeOutTable();">Submit</button><br>
+
+Legend: <br>
+&nbsp; &nbsp; &nbsp; Cost per month<br>
+&nbsp; &nbsp; &nbsp; Cost per mile<br>
+&nbsp; &nbsp; &nbsp; Total monthly cost<br>
+
+<hr>
+<div style="overflow-x:auto;">
+<table id="outTable" class="tableOut">
+</table>
+</div>
+<hr>
+
+<p> <a href="http://weblab.cs.uml.edu/~dshapiro/index.html">Back</a> <br> </p>
+
+</body>
+</html>
